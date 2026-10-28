@@ -24,7 +24,7 @@ impl IncrementContract {
         log!(&env, "count: {}", count);
 
         // Increment the count.
-        count = count.checked_add(1).expect("overflow");
+        count = count.strict_add(1);
 
         // Check if the count exceeds the max.
         if count <= MAX {

@@ -15,7 +15,7 @@ impl AllocContract {
 
         let mut sum: u32 = 0;
         for i in v1 {
-            sum = sum.checked_add(i).expect("overflow");
+            sum = sum.strict_add(i);
         }
 
         sum
